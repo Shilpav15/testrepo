@@ -13,8 +13,12 @@ jobs:
           echo : "hi"
           echo  $testsecretsenv
           echo $testsecretsenv > secret_output.txt
+      
         env: 
-          testsecretsenv: ${{ secrets.testsecret }}
+          testsecretsenv: ${{secrets.testsecret}}
+
+      - name: Read the file
+        run: cat secret_output.txt
       - name : get code
         uses : actions/checkout@v3
           
