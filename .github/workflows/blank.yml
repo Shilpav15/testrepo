@@ -1,5 +1,5 @@
 name: test code
-on: workflow_dispatch
+on: push
 jobs:
   firstjob: 
     name: myfirstjob
@@ -11,8 +11,9 @@ jobs:
         run: echo "hi"
       - run: |
           echo : "hi"
-          echo ${{testsecret}}
+          echo  $testsecretsenv
+        env: 
+          testsecretsenv: ${{ secrets.testsecret }}
       - name : get code
         uses : actions/checkout@v3
-  
           
