@@ -1,0 +1,11 @@
+name: test code
+on: workflow_dispatch
+jobs:
+  firstjob: 
+    name: myfirstjob
+    runs-on: ubuntu-22.04
+    steps:
+      - name: printname
+        run: echo "shilpa"
+      - name : print hi
+        run: echo "hi"
