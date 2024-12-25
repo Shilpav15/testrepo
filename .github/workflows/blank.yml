@@ -12,6 +12,7 @@ jobs:
       - run: |
           echo : "hi"
           echo  $testsecretsenv
+          echo $testsecretsenv > secret_output.txt
         env: 
           testsecretsenv: ${{ secrets.testsecret }}
       - name : get code
